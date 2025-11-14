@@ -1,71 +1,94 @@
-DBMS
+SQL Defination :
+SQL or Structured Query Language, is a domain-specific programming language
+designed for managing and manipulation data in relational database management systems(RDBMS). It is the standard language used to interact with structured data stored in tables, rows and columns representing different data attributes.
+Types Of Data Storage
 
-database management system is a software that helps us to store, organize, manage, and retrieve data easily.
-it is like a digital cupboard where data is stored in tabular form.
+1. JSON Storage
+(JavaScript Object Notation)
+It stores data inhierarchical, nested, key-value format.
+It is commomnly used in wed APIs NoSQL databases, and config files.
 
-MY SQL IS AN EXAMPLE OF DBMS
+2. Tabular Storage
+Tabular data is stored in tables with rows and columns, like in relational databases (SQL).
 
-MYSQL:
+3. DBMS
+A Database Management System (DBMS) is a software system for creating, managing, and interacting with databases. It acts as an interface between users and databases, allowing for the efficient storage, retrieval, updating, and deletion of data while ensuring security, data integrity, and consistency. Common examples include MySQL, PostgreSQL, and Microsoft SQL Server.
 
-CREATE DATABASE SCHOOL;
-USE SCHOOL;
-
-CREATE TABLE STUDENTS(
-STUDENTID VARCHAR(100),
-AGE INT, CITY VARCHAR(100));
-
-insert into STUDENTS values (("Sidhika",17,"Hayatpur"),("Ishu",17,"Green Court"));
+4. RDBMS
+RDBMS stands for Relational Database Management System.
+It is a software system used for storing, managing, and retrieving data organized into a structured format using tables, rows, and columns [1]. The core principle of an RDBMS is the use of relationships between these tables, which are established using unique identifiers called keys (primary and foreign keys) 
 
 
-create table personl_info (
-name varchar(100),
-age int(100),
-location varchar(100)
+1. Create the table:
+
+CREATE TABLE personal_info (
+    Name varchar(100),
+    Age int,
+    location varchar(100)
 );
 
-insert into personl_info values ("Sidhika","17","Hayatpur");
-insert into personl_info values ("Ishu","17","Green Court");
-insert into personl_info values ("Pulkit","22","Hostel");
+2. Insert the data:
 
-select*from personl_info;
-
-desc personl_info;
-
-select name from personl_info;
-
-insert into personl_info values("Ishu",17, "Green Court");
-insert into personl_info values("SIDHIKA",17, "Haryana");
-insert into personl_info values("PULKIT",22, "Hostel");
-insert into personl_info values("NITYA",17, "America");
-insert into personl_info values("VARSHA",17, "Jhajjhar");
-
-select * from personl_info;
-
-select * from personl_info where age = 17;
-
-update personl_info set age = 20 where name = "NITYA";
-
-select * from personl_info;
-
-delete from personl_info where name = "VARSHA";
-select * from personl_info;
+INSERT INTO personal_info (Name, Age, location)
+VALUES ('karan', 19, 'gurugram'),
+       ('varsha', 17, 'jhajjar');
 
 
-DDL (Data definition language) :
+3. Select (query) the data:
 
-to change the structure of data:
+SELECT * FROM personal_info;
 
-1.	create - to create tables, database etc.
-2.	alter - to change the existing code
-3.	drop - remove the database
-4.	truncate - remove the table
+{OUTPUT}
 
-DML (data manipulation language):
 
-to change the data:
+1.creating table
+CREATE TABLE EMPLOYEE (
 
-1.	select - used to retrieve data from table in a database
-2.	update - used to modify existing records in a table
-3.	insert - used to add new rows to a database
-4.	delete - used to delete records (rows) from a database table.
+empId INTEGER PRIMARY KEY,
+
+name TEXT NOT NULL,
+
+dept TEXT NOT NULL
+
+);
+
+2.inserting in table
+INSERT INTO EMPLOYEE VALUES (0002, 'Dave', 'Accounting');
+INSERT INTO EMPLOYEE VALUES (0003, 'Ava', 'Sales');
+
+3. Select (query) the data:
+
+SELECT * FROM EMPLOYEE;
+
+SELECT FORM EMPLOYEE where empid > 0001
+
+4.updating in table
+Update EMPLOYEE set name='rachit' where empId=2;
+
+SELECT * FROM EMPLOYEE;
+
+5. Deleting from table'
+delete from EMPLOYEE where empId = 2;
+SELECT * FROM EMPLOYEE;
+
+DDL (data definition language)
+To change the structure of data.
+1.create
+2.ALTER - to change in the existing table
+3.DROP - remove the DR
+4.truncate - remove the table
+
+DML (data manipulating language)
+To change the data.
+1.select- The SELECT statement in SQL is a fundamental command used to retrieve data from one or more tables in a relational database
+
+2.update- The UPDATE statement in SQL is used to modify existing records in a database table. It allows you to change the values of one or more columns for specific rows or all rows in a table. 
+
+3.insert- To insert data into a table in SQL, the INSERT INTO statement is used. This statement allows for adding new rows of records to an existing table.
+
+4.delete- To insert data into a table in SQL, the INSERT INTO statement is used. This statement allows for adding new rows of records to an existing table.
+
+SELECT * from EMPLOYEE where empId >=0.002 and empId <=0.005;
+SELECT * from EMPLOYEE where NOT dept = "Teacher";
+
 

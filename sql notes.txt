@@ -1,0 +1,71 @@
+DBMS
+
+database management system is a software that helps us to store, organize, manage, and retrieve data easily.
+it is like a digital cupboard where data is stored in tabular form.
+
+MY SQL IS AN EXAMPLE OF DBMS
+
+MYSQL:
+
+CREATE DATABASE SCHOOL;
+USE SCHOOL;
+
+CREATE TABLE STUDENTS(
+STUDENTID VARCHAR(100),
+AGE INT, CITY VARCHAR(100));
+
+insert into STUDENTS values (("Sidhika",17,"Hayatpur"),("Ishu",17,"Green Court"));
+
+
+create table personl_info (
+name varchar(100),
+age int(100),
+location varchar(100)
+);
+
+insert into personl_info values ("Sidhika","17","Hayatpur");
+insert into personl_info values ("Ishu","17","Green Court");
+insert into personl_info values ("Pulkit","22","Hostel");
+
+select*from personl_info;
+
+desc personl_info;
+
+select name from personl_info;
+
+insert into personl_info values("Ishu",17, "Green Court");
+insert into personl_info values("SIDHIKA",17, "Haryana");
+insert into personl_info values("PULKIT",22, "Hostel");
+insert into personl_info values("NITYA",17, "America");
+insert into personl_info values("VARSHA",17, "Jhajjhar");
+
+select * from personl_info;
+
+select * from personl_info where age = 17;
+
+update personl_info set age = 20 where name = "NITYA";
+
+select * from personl_info;
+
+delete from personl_info where name = "VARSHA";
+select * from personl_info;
+
+
+DDL (Data definition language) :
+
+to change the structure of data:
+
+1.	create - to create tables, database etc.
+2.	alter - to change the existing code
+3.	drop - remove the database
+4.	truncate - remove the table
+
+DML (data manipulation language):
+
+to change the data:
+
+1.	select - used to retrieve data from table in a database
+2.	update - used to modify existing records in a table
+3.	insert - used to add new rows to a database
+4.	delete - used to delete records (rows) from a database table.
+
